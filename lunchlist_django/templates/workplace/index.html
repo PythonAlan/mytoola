@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'workplace/base.html' %}
+
+<html>
+
+<body>
+
+
+
+
+{% block content %}{{ block.super }}
+
+
+    {% include "workplace/index1.html" %}
+<div class="container" style="width:1000px;">
+	<h2>我的工作界面</h2>
+
+    {% for workplace in work_name %}
+	<a target="_blank" rel="nofollow" href="{{workplace.project_link}}"><button type="button" class="btn btn-info btn-lg">{{workplace.project_name}}</button></a>
+    {% endfor %}
+</div>
+
+
+<p>{% include "workplace/foot.html" %}</p>
+
+{% endblock %}
+
+
+
+</body>
+</html>

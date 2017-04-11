@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>成本查询系统「吕毅」</title>
+	<link rel="stylesheet" href="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+body {background-image:url('http://imgs.inkfrog.com/pix/bigwholesale4u/tool_background_1.jpg');
+      background-repeat:no-repeat;
+      background-position:center;
+     }
+
+</style>
+<style type="text/css">
+body
+{
+font-family : 微软雅黑,宋体;
+font-size : 1em;
+color : #FFFFFF;
+
+}
+</style>
+</head>
+<body>
+
+<div class="container" style="padding: 100px 300px 10px;" >
+<div class="panel panel-warning">
+	<div class="panel-heading">
+
+
+<form method='post' style="text-align:center">
+
+{% csrf_token %}
+<div class="text-center">
+<h4>
+    <div class="text-center" >
+    <p>广州缤恒产品开发售价成本查询系统</p>
+    <p>输入外币售价<br>{{ form.price }}</p>
+    <p>输入重量(克)<br>{{ form.weight }}</p>
+    <p>输入采购价¥<br>{{ form.purchase_price }}</p>
+    <input type="submit" value="GO" placeholder="price" >
+    </div>
+</h4>
+
+</div>
+</form>
+
+
+</div>
+    </div>
+        </div>
+
+
+</body>
+</html>
+

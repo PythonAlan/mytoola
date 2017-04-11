@@ -1,0 +1,443 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>售价成本分析系统「吕毅」</title>
+<style type="text/css">
+<!--
+body,table{
+    font-size:12px;
+}
+table{
+    table-layout:fixed;
+    empty-cells:show;
+    border-collapse: collapse;
+    margin:0 auto;
+}
+td{
+    height:20px;
+}
+h1,h2,h3{
+    font-size:12px;
+    margin:0;
+    padding:0;
+}
+
+.title { background: #FFF; border: 1px solid #9DB3C5; padding: 1px; width:90%;margin:20px auto; }
+    .title h1 { line-height: 31px; text-align:center;  background: #2F589C url(th_bg2.gif);
+ background-repeat: repeat-x; background-position: 0 0; color: #FFF; }
+        .title th, .title td { border: 1px solid #CAD9EA; padding: 5px; }
+
+
+/*这个是借鉴一个论坛的样式*/
+table.t1{
+    border:1px solid #cad9ea;
+    color:#666;
+}
+table.t1 th {
+    background-image: url(th_bg1.gif);
+    background-repeat::repeat-x;
+    height:30px;
+}
+table.t1 td,table.t1 th{
+    border:1px solid #cad9ea;
+    padding:0 1em 0;
+}
+table.t1 tr.a1{
+    background-color:#f5fafe;
+}
+
+
+
+table.t2{
+    border:1px solid #9db3c5;
+    color:#666;
+}
+table.t2 th {
+    background-image: url(th_bg2.gif);
+    background-repeat::repeat-x;
+    height:30px;
+    color:#fff;
+}
+table.t2 td{
+    border:1px dotted #cad9ea;
+    padding:0 2px 0;
+}
+table.t2 th{
+    border:1px solid #a7d1fd;
+    padding:0 2px 0;
+}
+table.t2 tr.a1{
+    background-color:#e8f3fd;
+}
+
+
+
+table.t3{
+    border:1px solid #fc58a6;
+    color:#720337;
+}
+table.t3 th {
+    background-image: url(th_bg3.gif);
+    background-repeat::repeat-x;
+    height:30px;
+    color:#35031b;
+}
+table.t3 td{
+    border:1px dashed #feb8d9;
+    padding:0 1.5em 0;
+}
+table.t3 th{
+    border:1px solid #b9f9dc;
+    padding:0 2px 0;
+}
+table.t3 tr.a1{
+    background-color:#fbd8e8;
+}
+
+-->
+</style>
+<script type="text/javascript">
+    function ApplyStyle(s){
+        document.getElementById("mytab").className=s.innerText;
+    }
+</script>
+</head>
+
+<body>
+<div class="title">
+  <h1>缤恒产品开发售价成本分析系统</h1>
+
+</div>
+<table width="90%" id="mytab"  border="1" class="t1">
+  <thead>   <th width="10%">国家</th>
+			<th width="30%">物流方式</th>
+            <th width="10%">售价(当地货币）</th>
+            <th width="10%">重量(g）</th>
+            <th width="10%">采购成本¥</th>
+			<th width="10%">头程成本¥</th>
+			<th width="10%">二程成本(当地货币)</th>
+			<th width="10%">二程成本¥</th>
+            <th width="10%">销售成本¥</th>
+			<th width="10%">总成本¥</th>
+			<th width="10%">毛利润¥</th>
+            <th width="10%">当前利润率</th>
+			<th width="10%">0%利润率售价</th>
+			<th width="10%">5%利润率售价</th>
+            <th width="10%">10%利润率售价</th>
+            <th width="10%">15%利润率售价</th>
+            <th width="10%">20%利润率售价</th>
+            <th width="10%">25%利润率售价</th>
+            <th width="10%">30%利润率售价</th>
+  </thead>
+ <tbody>
+      	<tr class="success">
+ 		    <td >UK</td>
+			<td >国内小包</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+ 		<tr class="success">
+ 		    <td >UK</td>
+			<td >海外小包(万邑通)</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+ 		<tr class="success">
+ 		    <td >UK</td>
+			<td >海外小包(中邮)</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+		<tr class="active">
+		    <td >UK</td>
+			<td >海外小包(线下FBA)</td>
+            <td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+		<tr class="danger">
+		    <td >US</td>
+			<td >国内小包(EUB美国)</td>
+            <td>{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}</td>
+            <td>{{ result_list.purchase_price }}</td>
+			<td>{{ result_list.first_class_cost_eub_us }}</td>
+			<td>{{ result_list.second_class_eub_us}}</td>
+			<td>{{ result_list.second_class_eub_us_rmb}}</td>
+            <td>{{ result_list.commission_cost_us }}</td>
+            <td>{{ result_list.total_cost_eub_us }}</td>
+            <td>{{ result_list.gross_profit_eub_us }}</td>
+            <td>{{ result_list.profit_margins_eub_us }}%</td>
+            <td>${{ result_list.zero_sale_price_eub_us }}</td>
+            <td>${{ result_list.five_sale_price_eub_us }}</td>
+            <td>${{ result_list.ten_sale_price_eub_us }}</td>
+            <td>${{ result_list.fifteen_sale_price_eub_us }}</td>
+            <td>${{ result_list.twenty_sale_price_eub_us }}</td>
+            <td>${{ result_list.twentyfive_sale_price_eub_us }}</td>
+            <td>${{ result_list.thirty_sale_price_eub_us }}</td>
+		<tr class="active">
+		    <td >US</td>
+			<td >海外小包(万邑通)</td>
+            <td>{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}</td>
+            <td>{{ result_list.purchase_price }}</td>
+			<td>{{ result_list.first_class_cost_wini_us }}</td>
+			<td>{{ result_list.second_class_wini_us}}</td>
+			<td>{{ result_list.second_class_wini_us_rmb}}</td>
+            <td>{{ result_list.commission_cost_us }}</td>
+            <td>{{ result_list.total_cost_wini_us }}</td>
+            <td>{{ result_list.gross_profit_wini_us }}</td>
+            <td>{{ result_list.profit_margins_wini_us }}%</td>
+            <td>${{ result_list.zero_sale_price_wini_us }}</td>
+            <td>${{ result_list.five_sale_price_wini_us }}</td>
+            <td>${{ result_list.ten_sale_price_wini_us }}</td>
+            <td>${{ result_list.fifteen_sale_price_wini_us }}</td>
+            <td>${{ result_list.twenty_sale_price_wini_us }}</td>
+            <td>${{ result_list.twentyfive_sale_price_wini_us }}</td>
+            <td>${{ result_list.thirty_sale_price_wini_us }}</td>
+
+		<tr class="success">
+		    <td >US</td>
+			<td >海外小包(中邮)</td>
+            <td>{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}</td>
+            <td>{{ result_list.purchase_price }}</td>
+			<td>{{ result_list.first_class_cost_cn_us }}</td>
+			<td>{{ result_list.second_class_cn_us}}</td>
+			<td>{{ result_list.second_class_cn_us_rmb}}</td>
+            <td>{{ result_list.commission_cost_us }}</td>
+            <td>{{ result_list.total_cost_cn_us }}</td>
+            <td>{{ result_list.gross_profit_cn_us }}</td>
+            <td>{{ result_list.profit_margins_cn_us }}%</td>
+            <td>${{ result_list.zero_sale_price_cn_us }}</td>
+            <td>${{ result_list.five_sale_price_cn_us }}</td>
+            <td>${{ result_list.ten_sale_price_cn_us }}</td>
+            <td>${{ result_list.fifteen_sale_price_cn_us }}</td>
+            <td>${{ result_list.twenty_sale_price_cn_us }}</td>
+            <td>${{ result_list.twentyfive_sale_price_cn_us }}</td>
+            <td>${{ result_list.thirty_sale_price_cn_us }}</td>
+		<tr class="warning">
+		    <td >US</td>
+			<td >海外小包(线下FBA)</td>
+            <td>{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}</td>
+            <td>{{ result_list.purchase_price }}</td>
+			<td>{{ result_list.first_class_cost_mulfba_us }}</td>
+			<td>{{ result_list.second_class_mulfba_us}}</td>
+			<td>{{ result_list.second_class_mulfba_us_rmb}}</td>
+            <td>{{ result_list.commission_cost_us }}</td>
+            <td>{{ result_list.total_cost_mulfba_us }}</td>
+            <td>{{ result_list.gross_profit_mulfba_us }}</td>
+            <td>{{ result_list.profit_margins_mulfba_us }}%</td>
+            <td>${{ result_list.zero_sale_price_mulfba_us }}</td>
+            <td>${{ result_list.five_sale_price_mulfba_us }}</td>
+            <td>${{ result_list.ten_sale_price_mulfba_us }}</td>
+            <td>${{ result_list.fifteen_sale_price_mulfba_us }}</td>
+            <td>${{ result_list.twenty_sale_price_mulfba_us }}</td>
+            <td>${{ result_list.twentyfive_sale_price_mulfba_us }}</td>
+            <td>${{ result_list.thirty_sale_price_mulfba_us }}</td>
+
+ 		<tr class="success">
+ 		    <td >DE</td>
+			<td >国内小包</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+ 		<tr class="success">
+ 		    <td >DE</td>
+			<td >海外小包(万邑通)</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+ 		<tr class="success">
+ 		    <td >DE</td>
+			<td >海外小包(中邮)</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+
+ 		<tr class="success">
+ 		    <td >AU</td>
+			<td >国内小包</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+
+		<tr class="active">
+		    <td >AU</td>
+			<td >海外小包(万邑通)</td>
+            <td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+
+		<tr class="active">
+		    <td >AU</td>
+			<td >海外小包(中邮)</td>
+            <td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+		</tr>
+
+
+  </tbody>
+</table>
+<div style = "text-align:center;">
+
+        <h3><a href="javascript:window.location.href = window.location.href.replace(/#/g,'');">返回</a></h3>
+
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
