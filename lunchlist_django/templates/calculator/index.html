@@ -16,13 +16,19 @@ table{
 }
 td{
     height:20px;
+
+
 }
 h1,h2,h3{
     font-size:12px;
-    margin:0;
-    padding:0;
+    margin:20px auto;;
+    padding:1px;
 }
 
+p {font-size:12px;
+text-indent:7em;
+
+}
 .title { background: #FFF; border: 1px solid #9DB3C5; padding: 1px; width:90%;margin:20px auto; }
     .title h1 { line-height: 31px; text-align:center;  background: #2F589C url(th_bg2.gif);
  background-repeat: repeat-x; background-position: 0 0; color: #FFF; }
@@ -36,7 +42,7 @@ table.t1{
 }
 table.t1 th {
     background-image: url(th_bg1.gif);
-    background-repeat::repeat-x;
+    background-repeat:repeat-x;
     height:30px;
 }
 table.t1 td,table.t1 th{
@@ -55,7 +61,7 @@ table.t2{
 }
 table.t2 th {
     background-image: url(th_bg2.gif);
-    background-repeat::repeat-x;
+    background-repeat:repeat-x;
     height:30px;
     color:#fff;
 }
@@ -79,7 +85,7 @@ table.t3{
 }
 table.t3 th {
     background-image: url(th_bg3.gif);
-    background-repeat::repeat-x;
+    background-repeat:repeat-x;
     height:30px;
     color:#35031b;
 }
@@ -97,20 +103,24 @@ table.t3 tr.a1{
 
 -->
 </style>
-<script type="text/javascript">
-    function ApplyStyle(s){
-        document.getElementById("mytab").className=s.innerText;
-    }
-</script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+
+
+
 </head>
 
 <body>
+
+
+
 <div class="title">
-  <h1>缤恒产品开发售价成本分析系统</h1>
+  <h1>缤恒产品定价系统</h1>
 
 </div>
-<table width="90%" id="mytab"  border="1" class="t1">
-  <thead>   <th width="10%">国家</th>
+<table id='999'width="90%" id="mytab"  border="1" class="t1">
+<tr class="danger">
+  <thead>   <th width="10%" >国家</th>
 			<th width="30%">物流方式</th>
             <th width="10%">售价(当地货币）</th>
             <th width="10%">重量(g）</th>
@@ -121,7 +131,7 @@ table.t3 tr.a1{
             <th width="10%">销售成本¥</th>
 			<th width="10%">总成本¥</th>
 			<th width="10%">毛利润¥</th>
-            <th width="10%">当前利润率</th>
+            <th width="13%">当前利润率</th>
 			<th width="10%">0%利润率售价</th>
 			<th width="10%">5%利润率售价</th>
             <th width="10%">10%利润率售价</th>
@@ -129,49 +139,54 @@ table.t3 tr.a1{
             <th width="10%">20%利润率售价</th>
             <th width="10%">25%利润率售价</th>
             <th width="10%">30%利润率售价</th>
+
   </thead>
+</tr>
  <tbody>
       	<tr class="success">
- 		    <td >UK</td>
+ 		    <td bgcolor="#97CBFF">UK</td>
 			<td >国内小包</td>
-            <td>-</td>
-			<td>-</td>
-			<td>-</td>
-            <td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-            <td>-</td>
-			<td>-</td>
-            <td>-</td>
+            <td>￡{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_gz_uk }}</td>
+			<td>￡{{ result_list.second_class_gz_uk}}</td>
+			<td>¥{{ result_list.second_class_gz_uk_rmb}}</td>
+            <td>¥{{ result_list.commission_cost_uk }}</td>
+            <td>¥{{ result_list.total_cost_gz_uk }}</td>
+            <td>{{ result_list.gross_profit_gz_uk }}</td>
+            <td>{{ result_list.profit_margins_gz_uk }}%</td>
+            <td>￡{{ result_list.zero_sale_price_gz_uk }}</td>
+            <td>￡{{ result_list.five_sale_price_gz_uk }}</td>
+            <td>￡{{ result_list.ten_sale_price_gz_uk }}</td>
+            <td>￡{{ result_list.fifteen_sale_price_gz_uk }}</td>
+            <td>￡{{ result_list.twenty_sale_price_gz_uk }}</td>
+            <td>￡{{ result_list.twentyfive_sale_price_gz_uk }}</td>
+            <td>￡{{ result_list.thirty_sale_price_gz_uk }}</td>
+        </tr>
  		<tr class="success">
- 		    <td >UK</td>
+ 		    <td bgcolor="#97CBFF">UK</td>
 			<td >海外小包(万邑通)</td>
-            <td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-            <td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-            <td>-</td>
-			<td>-</td>
-            <td>-</td>
+            <td>￡{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_wini_uk }}</td>
+			<td>￡{{ result_list.second_class_wini_uk }}</td>
+			<td>¥{{ result_list.second_class_wini_uk_rmb }}</td>
+            <td>¥{{ result_list.commission_cost_uk }}</td>
+            <td>¥{{ result_list.total_cost_wini_uk }}</td>
+            <td>{{ result_list.gross_profit_wini_uk }}</td>
+            <td>{{ result_list.profit_margins_wini_uk }}%</td>
+            <td>￡{{ result_list.zero_sale_price_wini_uk }}</td>
+            <td>￡{{ result_list.five_sale_price_wini_uk }}</td>
+            <td>￡{{ result_list.ten_sale_price_wini_uk }}</td>
+            <td>￡{{ result_list.fifteen_sale_price_wini_uk }}</td>
+            <td>￡{{ result_list.twenty_sale_price_wini_uk }}</td>
+            <td>￡{{ result_list.twentyfive_sale_price_wini_uk }}</td>
+            <td>￡{{ result_list.thirty_sale_price_wini_uk }}</td>
+        </tr>
  		<tr class="success">
- 		    <td >UK</td>
+ 		    <td bgcolor="#97CBFF">UK</td>
 			<td >海外小包(中邮)</td>
             <td>-</td>
 			<td>-</td>
@@ -190,8 +205,9 @@ table.t3 tr.a1{
             <td>-</td>
 			<td>-</td>
             <td>-</td>
+        </tr>
 		<tr class="active">
-		    <td >UK</td>
+		    <td bgcolor="#97CBFF">UK</td>
 			<td >海外小包(线下FBA)</td>
             <td>-</td>
             <td>-</td>
@@ -210,17 +226,40 @@ table.t3 tr.a1{
             <td>-</td>
 			<td>-</td>
             <td>-</td>
+        </tr>
+        <tr class="active">
+		    <td bgcolor="#f69c9f">UK</td>
+			<td >海运<img src="http://imgs.inkfrog.com/pix/bigwholesale4u/boat_logo.jpg"height="70%"/></td>
+            <td>￡{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_wini_sea_uk }}</td>
+			<td>￡{{ result_list.second_class_wini_uk }}</td>
+			<td>¥{{ result_list.second_class_wini_uk_rmb }}</td>
+            <td>¥{{ result_list.commission_cost_uk }}</td>
+            <td>¥{{ result_list.total_cost_wini_sea_uk }}</td>
+            <td>{{ result_list.gross_profit_wini_sea_uk }}</td>
+            <td>{{ result_list.profit_margins_wini_sea_uk }}%</td>
+            <td>￡{{ result_list.zero_sale_price_wini_sea_uk }}</td>
+            <td>￡{{ result_list.five_sale_price_wini_sea_uk }}</td>
+            <td>￡{{ result_list.ten_sale_price_wini_sea_uk }}</td>
+            <td>￡{{ result_list.fifteen_sale_price_wini_sea_uk }}</td>
+            <td>￡{{ result_list.twenty_sale_price_wini_sea_uk }}</td>
+            <td>￡{{ result_list.twentyfive_sale_price_wini_sea_uk }}</td>
+            <td>￡{{ result_list.thirty_sale_price_wini_sea_uk }}</td>
+        </tr>
+
 		<tr class="danger">
 		    <td >US</td>
 			<td >国内小包(EUB美国)</td>
-            <td>{{ result_list.price }}</td>
-            <td>{{ result_list.weight }}</td>
-            <td>{{ result_list.purchase_price }}</td>
-			<td>{{ result_list.first_class_cost_eub_us }}</td>
-			<td>{{ result_list.second_class_eub_us}}</td>
-			<td>{{ result_list.second_class_eub_us_rmb}}</td>
-            <td>{{ result_list.commission_cost_us }}</td>
-            <td>{{ result_list.total_cost_eub_us }}</td>
+            <td>${{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_eub_us }}</td>
+			<td>${{ result_list.second_class_eub_us}}</td>
+			<td>¥{{ result_list.second_class_eub_us_rmb}}</td>
+            <td>¥{{ result_list.commission_cost_us }}</td>
+            <td>¥{{ result_list.total_cost_eub_us }}</td>
             <td>{{ result_list.gross_profit_eub_us }}</td>
             <td>{{ result_list.profit_margins_eub_us }}%</td>
             <td>${{ result_list.zero_sale_price_eub_us }}</td>
@@ -230,17 +269,18 @@ table.t3 tr.a1{
             <td>${{ result_list.twenty_sale_price_eub_us }}</td>
             <td>${{ result_list.twentyfive_sale_price_eub_us }}</td>
             <td>${{ result_list.thirty_sale_price_eub_us }}</td>
+        </tr>
 		<tr class="active">
 		    <td >US</td>
 			<td >海外小包(万邑通)</td>
-            <td>{{ result_list.price }}</td>
-            <td>{{ result_list.weight }}</td>
-            <td>{{ result_list.purchase_price }}</td>
-			<td>{{ result_list.first_class_cost_wini_us }}</td>
-			<td>{{ result_list.second_class_wini_us}}</td>
-			<td>{{ result_list.second_class_wini_us_rmb}}</td>
-            <td>{{ result_list.commission_cost_us }}</td>
-            <td>{{ result_list.total_cost_wini_us }}</td>
+            <td>${{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_wini_us }}</td>
+			<td>${{ result_list.second_class_wini_us }}</td>
+			<td>¥{{ result_list.second_class_wini_us_rmb }}</td>
+            <td>¥{{ result_list.commission_cost_us }}</td>
+            <td>¥{{ result_list.total_cost_wini_us }}</td>
             <td>{{ result_list.gross_profit_wini_us }}</td>
             <td>{{ result_list.profit_margins_wini_us }}%</td>
             <td>${{ result_list.zero_sale_price_wini_us }}</td>
@@ -250,18 +290,18 @@ table.t3 tr.a1{
             <td>${{ result_list.twenty_sale_price_wini_us }}</td>
             <td>${{ result_list.twentyfive_sale_price_wini_us }}</td>
             <td>${{ result_list.thirty_sale_price_wini_us }}</td>
-
+        </tr>
 		<tr class="success">
 		    <td >US</td>
 			<td >海外小包(中邮)</td>
-            <td>{{ result_list.price }}</td>
-            <td>{{ result_list.weight }}</td>
-            <td>{{ result_list.purchase_price }}</td>
-			<td>{{ result_list.first_class_cost_cn_us }}</td>
-			<td>{{ result_list.second_class_cn_us}}</td>
-			<td>{{ result_list.second_class_cn_us_rmb}}</td>
-            <td>{{ result_list.commission_cost_us }}</td>
-            <td>{{ result_list.total_cost_cn_us }}</td>
+            <td>${{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_cn_us }}</td>
+			<td>${{ result_list.second_class_cn_us}}</td>
+			<td>¥{{ result_list.second_class_cn_us_rmb}}</td>
+            <td>¥{{ result_list.commission_cost_us }}</td>
+            <td>¥{{ result_list.total_cost_cn_us }}</td>
             <td>{{ result_list.gross_profit_cn_us }}</td>
             <td>{{ result_list.profit_margins_cn_us }}%</td>
             <td>${{ result_list.zero_sale_price_cn_us }}</td>
@@ -271,17 +311,18 @@ table.t3 tr.a1{
             <td>${{ result_list.twenty_sale_price_cn_us }}</td>
             <td>${{ result_list.twentyfive_sale_price_cn_us }}</td>
             <td>${{ result_list.thirty_sale_price_cn_us }}</td>
+        </tr>
 		<tr class="warning">
 		    <td >US</td>
 			<td >海外小包(线下FBA)</td>
-            <td>{{ result_list.price }}</td>
-            <td>{{ result_list.weight }}</td>
-            <td>{{ result_list.purchase_price }}</td>
-			<td>{{ result_list.first_class_cost_mulfba_us }}</td>
-			<td>{{ result_list.second_class_mulfba_us}}</td>
-			<td>{{ result_list.second_class_mulfba_us_rmb}}</td>
-            <td>{{ result_list.commission_cost_us }}</td>
-            <td>{{ result_list.total_cost_mulfba_us }}</td>
+            <td>${{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_mulfba_us }}</td>
+			<td>${{ result_list.second_class_mulfba_us}}</td>
+			<td>¥{{ result_list.second_class_mulfba_us_rmb}}</td>
+            <td>¥{{ result_list.commission_cost_us }}</td>
+            <td>¥{{ result_list.total_cost_mulfba_us }}</td>
             <td>{{ result_list.gross_profit_mulfba_us }}</td>
             <td>{{ result_list.profit_margins_mulfba_us }}%</td>
             <td>${{ result_list.zero_sale_price_mulfba_us }}</td>
@@ -291,49 +332,72 @@ table.t3 tr.a1{
             <td>${{ result_list.twenty_sale_price_mulfba_us }}</td>
             <td>${{ result_list.twentyfive_sale_price_mulfba_us }}</td>
             <td>${{ result_list.thirty_sale_price_mulfba_us }}</td>
-
+        </tr>
+        <tr class="active">
+		    <td bgcolor="#f69c9f">US</td>
+			<td >海运<img src="http://imgs.inkfrog.com/pix/bigwholesale4u/boat_logo.jpg"height="70%"/></td>
+            <td>${{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_wini_sea_us }}</td>
+			<td>${{ result_list.second_class_wini_us }}</td>
+			<td>¥{{ result_list.second_class_wini_us_rmb }}</td>
+            <td>¥{{ result_list.commission_cost_us }}</td>
+            <td>¥{{ result_list.total_cost_wini_sea_us }}</td>
+            <td>{{ result_list.gross_profit_wini_sea_us }}</td>
+            <td>{{ result_list.profit_margins_wini_sea_us }}%</td>
+            <td>${{ result_list.zero_sale_price_wini_sea_us }}</td>
+            <td>${{ result_list.five_sale_price_wini_sea_us }}</td>
+            <td>${{ result_list.ten_sale_price_wini_sea_us }}</td>
+            <td>${{ result_list.fifteen_sale_price_wini_sea_us }}</td>
+            <td>${{ result_list.twenty_sale_price_wini_sea_us }}</td>
+            <td>${{ result_list.twentyfive_sale_price_wini_sea_us }}</td>
+            <td>${{ result_list.thirty_sale_price_wini_sea_us }}</td>
+        </tr>
  		<tr class="success">
- 		    <td >DE</td>
+ 		    <td bgcolor="#97CBFF">DE</td>
 			<td >国内小包</td>
-            <td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-            <td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-            <td>-</td>
-			<td>-</td>
-            <td>-</td>
+            <td>€{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_gz_de }}</td>
+			<td>€{{ result_list.second_class_gz_de}}</td>
+			<td>¥{{ result_list.second_class_gz_de_rmb}}</td>
+            <td>¥{{ result_list.commission_cost_de }}</td>
+            <td>¥{{ result_list.total_cost_gz_de }}</td>
+            <td>{{ result_list.gross_profit_gz_de }}</td>
+            <td>{{ result_list.profit_margins_gz_de }}%</td>
+            <td>€{{ result_list.zero_sale_price_gz_de }}</td>
+            <td>€{{ result_list.five_sale_price_gz_de }}</td>
+            <td>€{{ result_list.ten_sale_price_gz_de }}</td>
+            <td>€{{ result_list.fifteen_sale_price_gz_de }}</td>
+            <td>€{{ result_list.twenty_sale_price_gz_de }}</td>
+            <td>€{{ result_list.twentyfive_sale_price_gz_de }}</td>
+            <td>€{{ result_list.thirty_sale_price_gz_de }}</td>
+        </tr>
  		<tr class="success">
- 		    <td >DE</td>
+ 		    <td bgcolor="#97CBFF">DE</td>
 			<td >海外小包(万邑通)</td>
-            <td>-</td>
-			<td>-</td>
-			<td>-</td>
-            <td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-            <td>-</td>
-			<td>-</td>
-            <td>-</td>
+            <td>€{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_wini_de }}</td>
+			<td>€{{ result_list.second_class_wini_de }}</td>
+			<td>¥{{ result_list.second_class_wini_de_rmb }}</td>
+            <td>¥{{ result_list.commission_cost_de }}</td>
+            <td>¥{{ result_list.total_cost_wini_de }}</td>
+            <td>{{ result_list.gross_profit_wini_de }}</td>
+            <td>{{ result_list.profit_margins_wini_de }}%</td>
+            <td>€{{ result_list.zero_sale_price_wini_de }}</td>
+            <td>€{{ result_list.five_sale_price_wini_de }}</td>
+            <td>€{{ result_list.ten_sale_price_wini_de }}</td>
+            <td>€{{ result_list.fifteen_sale_price_wini_de }}</td>
+            <td>€{{ result_list.twenty_sale_price_wini_de }}</td>
+            <td>€{{ result_list.twentyfive_sale_price_wini_de }}</td>
+            <td>€{{ result_list.thirty_sale_price_wini_de }}</td>
+        </tr>
  		<tr class="success">
- 		    <td >DE</td>
+ 		    <td bgcolor="#97CBFF">DE</td>
 			<td >海外小包(中邮)</td>
             <td>-</td>
 			<td>-</td>
@@ -352,48 +416,71 @@ table.t3 tr.a1{
             <td>-</td>
 			<td>-</td>
             <td>-</td>
-
+        </tr>
+        <tr class="active">
+		    <td bgcolor="#f69c9f">DE</td>
+			<td >海运<img src="http://imgs.inkfrog.com/pix/bigwholesale4u/boat_logo.jpg"height="70%"/></td>
+            <td>€{{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_wini_sea_de }}</td>
+			<td>€{{ result_list.second_class_wini_de }}</td>
+			<td>¥{{ result_list.second_class_wini_de_rmb }}</td>
+            <td>¥{{ result_list.commission_cost_de }}</td>
+            <td>¥{{ result_list.total_cost_wini_sea_de }}</td>
+            <td>{{ result_list.gross_profit_wini_sea_de }}</td>
+            <td>{{ result_list.profit_margins_wini_sea_de }}%</td>
+            <td>€{{ result_list.zero_sale_price_wini_sea_de }}</td>
+            <td>€{{ result_list.five_sale_price_wini_sea_de }}</td>
+            <td>€{{ result_list.ten_sale_price_wini_sea_de }}</td>
+            <td>€{{ result_list.fifteen_sale_price_wini_sea_de }}</td>
+            <td>€{{ result_list.twenty_sale_price_wini_sea_de }}</td>
+            <td>€{{ result_list.twentyfive_sale_price_wini_sea_de }}</td>
+            <td>€{{ result_list.thirty_sale_price_wini_sea_de }}</td>
+        </tr>
  		<tr class="success">
  		    <td >AU</td>
 			<td >国内小包</td>
-            <td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-            <td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-            <td>-</td>
-			<td>-</td>
-            <td>-</td>
+            <td>${{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_gz_au }}</td>
+			<td>${{ result_list.second_class_gz_au}}</td>
+			<td>¥{{ result_list.second_class_gz_au_rmb}}</td>
+            <td>¥{{ result_list.commission_cost_au }}</td>
+            <td>¥{{ result_list.total_cost_gz_au }}</td>
+            <td>{{ result_list.gross_profit_gz_au }}</td>
+            <td>{{ result_list.profit_margins_gz_au }}%</td>
+            <td>${{ result_list.zero_sale_price_gz_au }}</td>
+            <td>${{ result_list.five_sale_price_gz_au }}</td>
+            <td>${{ result_list.ten_sale_price_gz_au }}</td>
+            <td>${{ result_list.fifteen_sale_price_gz_au }}</td>
+            <td>${{ result_list.twenty_sale_price_gz_au }}</td>
+            <td>${{ result_list.twentyfive_sale_price_gz_au }}</td>
+            <td>${{ result_list.thirty_sale_price_gz_au }}</td>
+        </tr>
 
 		<tr class="active">
 		    <td >AU</td>
 			<td >海外小包(万邑通)</td>
-            <td>-</td>
-            <td>-</td>
-			<td>-</td>
-			<td>-</td>
-            <td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-			<td>-</td>
-            <td>-</td>
-			<td>-</td>
-            <td>-</td>
+            <td>${{ result_list.price }}</td>
+            <td>{{ result_list.weight }}g</td>
+            <td>¥{{ result_list.purchase_price }}</td>
+			<td>¥{{ result_list.first_class_cost_wini_au }}</td>
+			<td>${{ result_list.second_class_wini_au }}</td>
+			<td>¥{{ result_list.second_class_wini_au_rmb }}</td>
+            <td>¥{{ result_list.commission_cost_au }}</td>
+            <td>¥{{ result_list.total_cost_wini_au }}</td>
+            <td>{{ result_list.gross_profit_wini_au }}</td>
+            <td>{{ result_list.profit_margins_wini_au }}%</td>
+            <td>${{ result_list.zero_sale_price_wini_au }}</td>
+            <td>${{ result_list.five_sale_price_wini_au }}</td>
+            <td>${{ result_list.ten_sale_price_wini_au }}</td>
+            <td>${{ result_list.fifteen_sale_price_wini_au }}</td>
+            <td>${{ result_list.twenty_sale_price_wini_au }}</td>
+            <td>${{ result_list.twentyfive_sale_price_wini_au }}</td>
+            <td>${{ result_list.thirty_sale_price_wini_au }}</td>
+        </tr>
 
 		<tr class="active">
 		    <td >AU</td>
@@ -416,17 +503,135 @@ table.t3 tr.a1{
 			<td>-</td>
             <td>-</td>
 		</tr>
-
+        <tr class="active">
+		    <td bgcolor="#f69c9f">AU</td>
+			<td >海运<img src="http://imgs.inkfrog.com/pix/bigwholesale4u/boat_logo.jpg"height="70%"/></td>
+            <td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+			<td>-</td>
+            <td>-</td>
+			<td>-</td>
+            <td>-</td>
+        </tr>
 
   </tbody>
 </table>
+		<script type="text/javascript">
+			var $cells = document.getElementsByTagName('td'), $negative, $i;
+			for ($i = 0; $i < $cells.length; $i++) {
+				if (!isNaN($cells[$i].innerHTML)) {
+					$negative = (1 * $cells[$i].innerHTML) < 0;
+					$cells[$i].style.backgroundColor = $negative ? '#b22222' : '#22b222';
+					$cells[$i].style.color           = $negative ? '#ff0000' : '#00ff00';
+				}
+			}
+		</script>
+
 <div style = "text-align:center;">
 
         <h3><a href="javascript:window.location.href = window.location.href.replace(/#/g,'');">返回</a></h3>
 
 </div>
+         <div style="color:#97CBFF"><p>US国家的海运于4.28号更新</p></div>
+         <div style="color:#97CBFF"><p>毛利润负数高光红色，正数高光绿色4.25号更新</p></div>
+         <div style="color:#97CBFF"><p>UK,DE国家的海运于4.21号更新</p></div>
+         <div style="color:#97CBFF"><p>US,UK国家的国内小包于4.19号更新</p></div>
+         <div style="color:#97CBFF"><p>UK,DE,AU国家的国内小包和海外小包（万邑通）于4.13号凌晨更新</p></div>
+    	 <p>总成本 =  采购成本+头程成本+二程成本+销售费用</p>
+
+    	 <p>国内小包（EUBUS）尺寸限制：长+宽+高≦90cm; 最长一边不≦60cm</p>
+
+    	 <p>海外小包（万邑通US）尺寸限制：长+周长≦274cm</p>
+
+    	 <p>海外小包（中邮US）尺寸限制：最长边≦274cm ; 长+（宽+高）*2≦330cm</p>
+
+
+
+
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

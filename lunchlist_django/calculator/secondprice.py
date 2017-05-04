@@ -76,21 +76,90 @@ multichange_mulfba_Oversize_us = {
 
 
 eub_us = {
-    'weight_rate_below_200':0.08,
+    'weight_rate_below_200':0.075,
     'weight_rate_up_200':0.075,
     'Order Handling':9.0,
     'as_last_weight':70,
+    'discount':0.91,
 }
 
 
 
+gz_under_250_eds_a_uk = {
+    '1-20':2.46,
+    '21-30':3.03,
+    '31-40':3.44,
+    '41-50':3.91,
+
+}
+
+gz_under_250_eds_b_uk = {
+    '51-100':0.086,
+    '101-300':0.081,
+}
+
+gz_over_250_4px_track_uk = {
+    'weight_per_32_kg':0.032,
+    'Order Handling':18,
+
+}
 
 
 
+gz_under_250_eds_a_de = {
+    '1-20':2.46,
+    '21-30':3.12,
+    '31-40':3.54,
+    '41-50':4.01,
+
+}
+
+gz_under_250_eds_b_de = {
+    '51-100':0.087,
+    '101-250':0.083,
+}
 
 
 
+gz_between_250_1000_YanWen_de = {
+    '250-1000':0.047,
+    'Order Handling':11,
+}
+gz_between_1kg_2kg_4px_track_de = {
+    'packet_51_per_kg':0.051,
+    'Order Handling':20,
+}
 
+
+gz_au = {
+    'package_per_kg':0.072,
+    'Order Handling':5.72,
+}
+
+
+wini_uk = {
+    'Yodel Home Mini':2.2,
+}
+
+
+wini_AUPOST_au ={
+    '<=500':26,
+    '500-1000':29,
+    '>1000':31
+}
+
+wini_dhl_de = {
+    '0-1000':26,
+    '1000-all':27,
+
+}
+
+
+sea = {
+    'uk_fee':3150,
+    'de_fee':2800,
+    'us_fee':1450,
+}
 
 
 
